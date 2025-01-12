@@ -1,0 +1,139 @@
+ 
+.launching-text {
+    color: #000; /* Black color for text */
+    margin: 0; /* Remove extra margin */
+    padding: 0; /* Remove extra padding */
+    line-height: 1.2; /* Adjust the line height */
+    font-style: bold; /* Make the font bold */
+    text-align: center; /* Center align the text */
+    font-size: 30px;
+  }
+  
+  .launching-text h1 {
+    font-weight: 900;
+    margin: 0; /* Remove extra margin from h1 */
+    padding: 0; /* Remove extra padding */
+  }
+  
+  
+  p {
+    font-size: 1.5rem;
+    color: #000;
+    margin: 10px;
+    margin-top: 30px;
+    padding: 0;
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .logo-v {
+    max-width: 150px;
+    margin-top: 20px;
+  }
+  
+  .name-logo {
+    max-width: 300px;
+    margin-top: 50px;
+  }
+  
+  .social-link {
+    margin: 20px 0;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .instagram-link {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .insta-icon {
+    max-width: 30px;
+    transition: transform 0.3s ease;
+  }
+  
+  .instagram-link:hover .insta-icon {
+    transform: scale(1.1);
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .full-screen-background {
+    background-image: url('../assets/LaunchingSoon.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .full-screen-background button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 50px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+  }
+  
+  .full-screen-background button:hover {
+    background-color: #444;
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 768px) {
+    .full-screen-background {
+      background-size: contain;
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 1.8rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  
+    .insta-icon {
+      max-width: 25px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .full-screen-background {
+      background-size: contain;
+      padding: 15px;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    p {
+      font-size: 0.9rem;
+    }
+  
+    .insta-icon {
+      max-width: 20px;
+    }
+  }
