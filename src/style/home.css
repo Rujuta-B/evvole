@@ -1,26 +1,27 @@
- 
 .launching-text {
     color: #000; /* Black color for text */
     margin: 0; /* Remove extra margin */
     padding: 0; /* Remove extra padding */
     line-height: 1.2; /* Adjust the line height */
-    font-style: bold; /* Make the font bold */
+    font-style: normal; /* Normal font style */
     text-align: center; /* Center align the text */
-    font-size: 30px;
-  }
-  
-  .launching-text h1 {
-    font-weight: 900;
-    margin: 0; /* Remove extra margin from h1 */
-    padding: 0; /* Remove extra padding */
-  }
-  
-  
-  p {
-    font-size: 1.5rem;
-    color: #000;
-    margin: 10px;
+    font-size: 36px; /* Adjusted font size */
+    font-family: "Poppins", serif;
     margin-top: 30px;
+}
+
+.launching-text h1 {
+    font-weight: 900; /* Bold font */
+    margin: 0; /* Remove extra margin */
+    padding: 0; /* Remove extra padding */
+    font-size: 6rem; /* Adjust size of the text */
+}
+
+p {
+    font-size: 1.2rem; /* Adjusted font size */
+    color: #000; /* Black color */
+    margin: 10px;
+    margin-top: 20px; /* Reduced top margin */
     padding: 0;
     font-family: "Poppins", serif;
     font-weight: 500;
@@ -29,35 +30,50 @@
   
   .logo-v {
     max-width: 150px;
-    margin-top: 20px;
+    margin-top: 140px;
   }
   
   .name-logo {
     max-width: 300px;
-    margin-top: 50px;
+    margin-top: 10px;
   }
-  
-  .social-link {
+
+.instagram-link {
+
+    text-decoration: none;
     margin: 20px 0;
-    position: relative;
-    z-index: 2;
+
+    cursor: pointer;
+}
+
+  
+  .instagram-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    
+    padding: 15px 20px;
+    width: 100%;
   }
   
-  .instagram-link {
-    display: inline-block;
-    cursor: pointer;
+  .instagram-content span {
+    color: black;
+    font-size: 1rem;
+    font-weight: 500;
   }
   
   .insta-icon {
-    max-width: 30px;
-    transition: transform 0.3s ease;
+    width: 24px;
+    height: 24px;
+    margin: 0;
   }
-  
-  .instagram-link:hover .insta-icon {
+
+.instagram-link:hover .insta-icon {
     transform: scale(1.1);
-  }
-  
-  html, body {
+}
+
+html, body {
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -82,7 +98,7 @@
   }
   
   .full-screen-background button {
-    background-color: black;
+    background-color: #242a29;
     color: white;
     border: none;
     border-radius: 25px;
@@ -98,42 +114,42 @@
   .full-screen-background button:hover {
     background-color: #444;
     transform: scale(1.05);
-  }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .full-screen-background {
-      background-size: contain;
-      padding: 20px;
+        background-size: contain;
+        padding: 20px;
     }
-  
+
     h1 {
-      font-size: 1.8rem;
+        font-size: 2rem;
     }
-  
+
     p {
-      font-size: 1rem;
+        font-size: 1rem;
     }
-  
+
     .insta-icon {
-      max-width: 25px;
+        max-width: 25px;
     }
-  }
-  
-  @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
     .full-screen-background {
-      background-size: contain;
-      padding: 15px;
+        background-size: contain;
+        padding: 15px;
     }
-  
+
     h1 {
-      font-size: 1.5rem;
+        font-size: 1.5rem;
     }
-  
+
     p {
-      font-size: 0.9rem;
+        font-size: 0.9rem;
     }
-  
+
     .insta-icon {
-      max-width: 20px;
+        max-width: 20px;
     }
-  }
+}

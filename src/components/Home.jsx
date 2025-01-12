@@ -19,9 +19,12 @@ const Home = () => {
         href='https://www.instagram.com/evvole_exims?igsh=MTEwbmJma25vdm1wMA=='
         target="_blank"
         rel="noopener noreferrer"
+        className="instagram-link"
       >
-        {/* <h6>For more contenct checkout our Instagram</h6> */}
-        <img className="insta-icon" src={instagramIcon} alt="instagram" />
+        <div className="instagram-content">
+          <span>FOR MORE CONTENT CHECK OUT</span>
+          <img className="insta-icon" src={instagramIcon} alt="instagram" />
+        </div>
       </a>
       <img className="name-logo" src={logoName} alt="logo-name" />
     </div>
