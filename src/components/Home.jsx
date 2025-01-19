@@ -1,18 +1,18 @@
 
-import React from 'react';
+import React,{useState} from 'react';
 import '../style/home.css'
 import logoV from '../assets/logoV.svg';
 import instagramIcon from '../assets/instagram-icon.svg';
 import logoName from '../assets/logoName.svg';
-// import NotifyModal from './NotifyModal';
+import NotifyModal from './NotifyModal';
 
 const Home = () => {
-  // const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
 
-  // const handleCloseModal = () => {
-  //   setIsModalOpen(false);
-  // };
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <div className="full-screen-background">
       <img className="logo-v" src={logoV} alt="logo-v" />
@@ -23,7 +23,7 @@ const Home = () => {
 
       <p>We are currently making some <br />
         improvements to our website!</p>
-      <button >NOTIFY ME</button>
+      {/* <button onClick={() => setIsModalOpen(true)}>NOTIFY ME</button> */}
       <a
         href='https://www.instagram.com/evvole_exims?igsh=MTEwbmJma25vdm1wMA=='
         target="_blank"
@@ -36,7 +36,7 @@ const Home = () => {
         </div>
       </a>
       <img className="name-logo" src={logoName} alt="logo-name" />
-      {/* {open &&   <NotifyModal isOpen={isModalOpen} setOpen={handleCloseModal} />} */}
+      {isModalOpen &&   <NotifyModal isOpen={isModalOpen} setOpen={handleCloseModal} />}
     </div>
   )
 }

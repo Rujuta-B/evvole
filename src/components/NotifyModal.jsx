@@ -9,6 +9,7 @@ const NotifyModal = (props) => {
     const [email, setEmail] = useState('');
     const [number, setNumber] = useState('');
     const [errors, setErrors] = useState({});
+    console.log(isOpen)
 
     const validate = () => {
         const errors = {};
