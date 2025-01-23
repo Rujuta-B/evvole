@@ -1,155 +1,196 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.full-screen-background {
+  background-image: url('../assets/LaunchingSoon.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center; /* Center-align all text content */
+}
+
 .launching-text {
-    color: #000; /* Black color for text */
-    margin: 0; /* Remove extra margin */
-    padding: 0; /* Remove extra padding */
-    line-height: 1.2; /* Adjust the line height */
-    font-style: normal; /* Normal font style */
-    text-align: center; /* Center align the text */
-    font-size: 36px; /* Adjusted font size */
-    font-family: "Poppins", serif;
-    margin-top: 30px;
+  color: #000; /* Black color for text */
+  margin: 0; /* Remove extra margin */
+  padding: 0; /* Remove extra padding */
+  line-height: 1.2; /* Adjust the line height */
+  font-style: normal; /* Normal font style */
+  text-align: center; /* Center align the text */
+  font-size: 2.5rem; /* Adjust font size for better scaling */
+  font-family: "Poppins", serif;
+  margin-top: 2rem; /* Add consistent top margin */
 }
 
 .launching-text h1 {
-    font-weight: 900; /* Bold font */
-    margin: 0; /* Remove extra margin */
-    padding: 0; /* Remove extra padding */
-    font-size: 6rem; /* Adjust size of the text */
+  font-weight: 900; /* Bold font */
+  margin: 0; /* Remove extra margin */
+  padding: 0; /* Remove extra padding */
+  font-size: 4rem; /* Adjust size of the text */
 }
 
 p {
-    font-size: 1.2rem; /* Adjusted font size */
-    color: #000; /* Black color */
-    margin: 10px;
-    margin-top: 20px; /* Reduced top margin */
-    padding: 0;
-    font-family: "Poppins", serif;
-    font-weight: 500;
-    font-style: normal;
-  }
-  
-  .logo-v {
-    max-width: 150px;
-    margin-top: 140px;
-  }
-  
-  .name-logo {
-    max-width: 300px;
-    margin-top: 10px;
-  }
+  font-size: 1.2rem; /* Adjusted font size */
+  color: #000; /* Black color */
+  margin: 10px 0;
+  margin-top: 20px; /* Reduced top margin */
+  padding: 0;
+  font-family: "Poppins", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.logo-v {
+  max-width: 120px;
+  height: auto;
+  margin-top: 2rem;
+}
+
+.name-logo {
+  max-width: 200px;
+  height: auto;
+  margin-top: 1rem;
+}
 
 .instagram-link {
-
-    text-decoration: none;
-    margin: 20px 0;
-
-    cursor: pointer;
+  text-decoration: none;
+  margin: 20px 0;
+  cursor: pointer;
 }
 
-  
-  .instagram-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    
-    padding: 15px 20px;
-    width: 100%;
-  }
-  
-  .instagram-content span {
-    color: black;
-    font-size: 1rem;
-    font-weight: 500;
-  }
-  
-  .insta-icon {
-    width: 24px;
-    height: 24px;
-    margin: 0;
-  }
+.instagram-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 15px 20px;
+  width: 100%;
+}
+
+.instagram-content span {
+  color: black;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.insta-icon {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  transition: transform 0.3s ease;
+}
 
 .instagram-link:hover .insta-icon {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .full-screen-background {
-    background-image: url('../assets/LaunchingSoon.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-  
-  .full-screen-background button {
-    background-color: #242a29;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    padding: 10px 50px;
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 30px;
-  }
-  
-  .full-screen-background button:hover {
-    background-color: #444;
-    transform: scale(1.05);
+.full-screen-background button {
+  background-color: #242a29;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 50px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 30px;
 }
+
+.full-screen-background button:hover {
+  background-color: #444;
+  transform: scale(1.05);
+}
+
+/* MEDIA QUERIES */
 
 @media (max-width: 768px) {
-    .full-screen-background {
-        background-size: contain;
-        padding: 20px;
-    }
+  .full-screen-background {
+      background-size: cover; /* Adjusted to make background fit */
+      padding: 20px;
+      background-image: url('../assets/mob-logo.svg');
+  }
 
-    h1 {
-        font-size: 2rem;
-    }
+  .launching-text {
+      font-size: 2rem; /* Adjust text size for smaller screens */
+  }
 
-    p {
-        font-size: 1rem;
-    }
+  .launching-text h1 {
+      font-size: 3rem; /* Reduced size of heading */
+  }
 
-    .insta-icon {
-        max-width: 25px;
-    }
+  p {
+      font-size: 1rem; /* Adjust paragraph size */
+  }
+
+  .logo-v {
+      max-width: 100px; /* Adjust logo size */
+  }
+
+  .name-logo {
+      max-width: 180px; /* Adjust logo size */
+  }
+
+  .insta-icon {
+      width: 20px;
+      height: 20px;
+  }
+
+  .full-screen-background button {
+      font-size: 0.9rem; /* Reduce button size */
+      padding: 8px 40px; /* Adjust padding */
+  }
 }
 
 @media (max-width: 480px) {
-    .full-screen-background {
-        background-size: contain;
-        padding: 15px;
-    }
+  .full-screen-background {
+      background-size: contain;
+      padding: 15px;
+      background-image: url('../assets/mob-logo.svg');
+  }
 
-    h1 {
-        font-size: 1.5rem;
-    }
+  .launching-text {
+      font-size: 1.8rem; /* Further reduce text size */
+  }
 
-    p {
-        font-size: 0.9rem;
-    }
+  .launching-text h1 {
+      font-size: 2.5rem; /* Further reduce heading size */
+  }
 
-    .insta-icon {
-        max-width: 20px;
-    }
+  p {
+      font-size: 0.9rem; /* Reduce paragraph size */
+  }
+
+  .logo-v {
+      max-width: 80px; /* Smaller logo for very small screens */
+  }
+
+  .name-logo {
+      max-width: 150px; /* Adjusted size */
+  }
+
+  .insta-icon {
+      width: 16px;
+      height: 16px;
+  }
+
+  .full-screen-background button {
+      font-size: 0.8rem;
+      padding: 6px 30px; /* Smaller button */
+  }
 }
