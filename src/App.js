@@ -30,33 +30,15 @@ function ScrollToTop() {
   return null;
 }
 
-// Create a specialized navigation component
-function SectionLink({ to, children }) {
-  const navigate = useNavigate();
-  const location = useLocation();
-  
-  const handleClick = (e) => {
-    e.preventDefault();
-    
-    // If we're already on the home page, just scroll to the section
-    if (location.pathname === '/') {
-      const id = to.replace('#', '');
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      // If on a different page, navigate to home with hash
-      navigate(`/${to}`);
+function App() {
+  // Simple scroll function without changing URL
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  
-  return (
-    <a href={to} onClick={handleClick}>{children}</a>
-  );
-}
 
-function App() {
   return (
     <Router>
       <ScrollToTop />
@@ -70,11 +52,11 @@ function App() {
                 </div>
                 <nav>
                   <ul className="nav-menu">
-                    <li><SectionLink to="#home">Home</SectionLink></li>
-                    <li><SectionLink to="#about">About Us</SectionLink></li>
-                    <li><SectionLink to="#category">Category Vertical</SectionLink></li>
+                    <li><a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>Home</a></li>
+                    <li><a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About Us</a></li>
+                    <li><a href="#category" onClick={(e) => { e.preventDefault(); scrollToSection('category'); }}>Category Vertical</a></li>
                     <li><Link to="/legacy">Our Legacy</Link></li>
-                    <li><SectionLink to="#services">Services</SectionLink></li>
+                    <li><a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}>Services</a></li>
                     <li><Link to="/inquiry">Inquiry</Link></li>
                   </ul>
                 </nav>

@@ -18,7 +18,7 @@ function Footer() {
             <div className="contact-info">
             <div className="contact-item">
                 <PhoneIcon className="contact-icon" />
-                <p>+91 87500 066088</p>
+                <p><a href="tel:+918153033358" className="contact-link">+91 8153033358</a></p>
               </div>
               <div className="contact-item">
                 <EmailIcon className="contact-icon" />
