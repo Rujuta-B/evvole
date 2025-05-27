@@ -1,79 +1,80 @@
 import './App.css';
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Legacy from './components/Legacy';
 import Inquiry from './components/Inquiry';
 import Footer from './components/Footer';
 
-function App() {
+// ScrollToTop component for page navigation
+function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+  
   useEffect(() => {
-    // Smooth scrolling for navigation links
-    const anchors = document.querySelectorAll('a[href^="#"]');
-    const scrollHandler = function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        targetElement.scrollIntoView({
-          behavior: 'smooth'
-        });
-      }
-    };
-
-    anchors.forEach(anchor => {
-      anchor.addEventListener('click', scrollHandler);
-    });
-
-    // Cleanup function
-    return () => {
-      anchors.forEach(anchor => {
-        anchor.removeEventListener('click', scrollHandler);
-      });
-    };
-  }, []);
-
-  const scrollToNext = () => {
-    const sectionsWithId = Array.from(document.querySelectorAll('section[id]'));
-    let nextSectionToScroll = null;
-    for (let i = 0; i < sectionsWithId.length; i++) {
-      const section = sectionsWithId[i];
-      const rect = section.getBoundingClientRect();
-      if (rect.top > 1) { // 1px threshold to ensure it's below the viewport top
-        nextSectionToScroll = section;
-        break;
-      }
+    // If there's no hash in the URL, scroll to top
+    if (!hash) {
+      window.scrollTo(0, 0);
+    } 
+    // If there's a hash, scroll to that element after a short delay
+    else {
+      setTimeout(() => {
+        const id = hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 0);
     }
+  }, [pathname, hash]);
+  
+  return null;
+}
 
-    if (nextSectionToScroll) {
-      nextSectionToScroll.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      // If at the last section or no section is below, scroll to the top (home section)
-      const homeSection = document.getElementById('home');
-      if (homeSection) {
-        homeSection.scrollIntoView({ behavior: 'smooth' });
+// Create a specialized navigation component
+function SectionLink({ to, children }) {
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+  const handleClick = (e) => {
+    e.preventDefault();
+    
+    // If we're already on the home page, just scroll to the section
+    if (location.pathname === '/') {
+      const id = to.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
       }
+    } else {
+      // If on a different page, navigate to home with hash
+      navigate(`/${to}`);
     }
   };
+  
+  return (
+    <a href={to} onClick={handleClick}>{children}</a>
+  );
+}
 
+function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={
           <>
-            {/* Header */}
             <header className="header">
               <div className="nav-container">
                 <div className="logo">
-                  <img src="evvole-logo.svg" alt="EVVOLE Logo" />
+                  <Link to="/"><img src="evvole-logo.svg" alt="EVVOLE Logo" /></Link>
                 </div>
                 <nav>
                   <ul className="nav-menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#category">Category Vertical</a></li>
+                    <li><SectionLink to="#home">Home</SectionLink></li>
+                    <li><SectionLink to="#about">About Us</SectionLink></li>
+                    <li><SectionLink to="#category">Category Vertical</SectionLink></li>
                     <li><Link to="/legacy">Our Legacy</Link></li>
-                    <li><a href="#services">Services</a></li>
+                    <li><SectionLink to="#services">Services</SectionLink></li>
                     <li><Link to="/inquiry">Inquiry</Link></li>
                   </ul>
                 </nav>
@@ -86,7 +87,14 @@ function App() {
                 <div className="hero-text">
                   <h1>Luxury. Heritage.<br />Handcrafted<br />Excellence.</h1>
                   <div className="hero-buttons">
-                    <a href="#about" className="cta-button">Explore Our Collection</a>
+                    <a 
+                      href="https://workdrive.zohopublic.in/folder/stnx6e017550c06734b8bb6ee4fbacadfbc36?layout=list" 
+                      className="cta-button" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      Explore Our Collection
+                    </a>
                     <a href="#contact" className="cta-button secondary">Get in Touch</a>
                   </div>
                 </div>
@@ -172,13 +180,7 @@ function App() {
               </div>
             </section> */}
 
-            {/* Footer */}
             <Footer />
-
-            {/* Navigation Arrow */}
-            <div className="nav-arrow" onClick={scrollToNext}>
-              <span>↓</span>
-            </div>
           </>
         } />
         <Route path="/legacy" element={<Legacy />} />

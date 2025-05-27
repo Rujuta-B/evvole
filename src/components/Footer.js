@@ -36,18 +36,18 @@ function Footer() {
           </div>
           
           <div className="footer-right">
-            <img src="scanner.png" alt="QR Code Scanner" className="qr-code" />
+            <img src="qrcode.jpeg" alt="QR Code Scanner" className="qr-code" />
             
             <div className="social-media">
               <h3>Follow Us:</h3>
                <div className="social-icons">
-                <a href="https://facebook.com/yourpage" target="_blank" rel="noopener noreferrer" className="social-icon-link">
+                <a href="https://www.facebook.com/profile.php?id=61571839168811" target="_blank" rel="noopener noreferrer" className="social-icon-link">
                 <Facebook className="contact-icon" />
                 </a>
-                <a href="https://twitter.com/yourpage" target="_blank" rel="noopener noreferrer" className="social-icon-link">
+                <a href="https://x.com/Evvole_Exims/media" target="_blank" rel="noopener noreferrer" className="social-icon-link">
                 <Twitter className="contact-icon" />
                 </a>
-                <a href="https://instagram.com/yourpage" target="_blank" rel="noopener noreferrer" className="social-icon-link">
+                <a href="https://www.instagram.com/evvole_exims/" target="_blank" rel="noopener noreferrer" className="social-icon-link">
                 <Insta className="contact-icon" />
                 </a>
               </div>
